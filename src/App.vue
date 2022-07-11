@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import { RouterLink, RouterView } from "vue-router"
   import HelloWorld from "@/components/HelloWorld.vue"
+  import { mdiHome } from "@mdi/js"
+  import IconMdi from "@/components/IconMdi.vue"
 </script>
 
 <template>
@@ -16,7 +18,10 @@
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">
+          Home
+          <icon-mdi :icon="mdiHome" />
+        </RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
