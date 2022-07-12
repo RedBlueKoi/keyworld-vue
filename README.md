@@ -1,6 +1,7 @@
 # keyworld-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a fun team project for beginners where we building an online store.
+On this project you gonna build and practice a lot of skills which you later can mention on your resume alongside with a finished project.
 
 ## Recommended IDE Setup
 
@@ -13,47 +14,21 @@ TypeScript cannot handle type information for `.vue` imports by default, so we r
 If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
 1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
-## Customize configuration
+To run the project:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- pnpm install
+- pnpm dev --open
 
-## Project Setup
+## More info
 
-```sh
-pnpm install
-```
+You can find the rest of the documentation here:
 
-### Compile and Hot-Reload for Development
-
-```sh
-pnpm dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-pnpm test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-pnpm build
-pnpm test:e2e # or `pnpm test:e2e:ci` for headless testing
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+- [Requirements](./docs/requirements.md)
+- [Project structure](./docs/structure.md)
+- [How to set up the project](./docs/setup.md)
+- [How to contribute to the project](./docs/workflow.md)
+- [Tools we are using and links to their documentation](./docs/tools.md)
