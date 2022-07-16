@@ -10,16 +10,6 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: "/category/:categoryName",
-      name: "category",
-      component: () => import("@/views/CategoryView.vue")
-    },
-    {
-      path: "/category/:categoryName/:productId",
-      name: "product",
-      component: () => import("@/views/ProductView.vue")
-    },
-    {
       path: "/checkout",
       name: "checkout",
       component: () => import("@/views/CheckoutView.vue")
@@ -28,6 +18,16 @@ const router = createRouter({
       path: "/success",
       name: "success",
       component: () => import("@/views/SuccessView.vue")
+    },
+    {
+      path: "/:categoryName/:productId",
+      name: "product",
+      component: () => import("@/views/ProductView.vue")
+    },
+    {
+      path: "/:categoryName",
+      name: "category",
+      component: () => import("@/views/CategoryView.vue")
     },
     {
       path: "/:pathMatch(.*)*",
