@@ -4,4 +4,4 @@
   <h3>Checkout View</h3>
 </template>
 
-<style scoped></style>
+<style scoped lang="postcss"></style>

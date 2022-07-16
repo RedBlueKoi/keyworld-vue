@@ -4,4 +4,4 @@
   <h3>Success View</h3>
 </template>
 
-<style scoped></style>
+<style scoped lang="postcss"></style>

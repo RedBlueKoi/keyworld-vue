@@ -4,4 +4,4 @@
   <h3>Product View</h3>
 </template>
 
-<style scoped></style>
+<style scoped lang="postcss"></style>
