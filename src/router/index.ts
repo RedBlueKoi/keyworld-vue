@@ -20,11 +20,6 @@ const router = createRouter({
       component: () => import("@/views/SuccessView.vue")
     },
     {
-      path: "/404",
-      name: "not-found",
-      component: () => import("@/views/NotFoundView.vue")
-    },
-    {
       path: "/:categoryName/:productId",
       name: "product",
       component: () => import("@/views/ProductView.vue")
@@ -33,6 +28,11 @@ const router = createRouter({
       path: "/:categoryName",
       name: "category",
       component: () => import("@/views/CategoryView.vue")
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "not-found",
+      component: () => import("@/views/NotFoundView.vue")
     }
   ]
 })
