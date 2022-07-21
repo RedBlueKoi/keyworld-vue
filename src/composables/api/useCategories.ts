@@ -11,7 +11,10 @@ const useCategories = () => {
     try {
       const categoriesCol = collection(db, "categories")
       const response = await getDocs(categoriesCol)
-      categories.value = response.docs.map((doc) => doc.data() as Category)
+      const allCategoreis = response.docs.map((doc) => doc.data() as Category)
+      categories.value = allCategoreis.filter(
+        (category) => !category.isDisabled
+      )
     } catch (error) {
       console.error(error)
     }
