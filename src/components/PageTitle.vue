@@ -1,6 +1,5 @@
 <template>
-  <h1
-    class="text-[40px] font-[400] font-normal leading-[48px] color-[#34495e] not-italic">
+  <h1 class="text-title-size text-title-blue">
     {{ title }}
   </h1>
 </template>
