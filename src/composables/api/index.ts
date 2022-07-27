@@ -1,3 +1,4 @@
 import useCategories from "./useCategories"
+import useProducts from "./useProducts"
 
-export { useCategories }
+export { useCategories, useProducts }
