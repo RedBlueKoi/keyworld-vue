@@ -1,9 +1,9 @@
 <template>
   <main>
-    <TitleItem title="Title" />
+    <page-title title="Title" />
   </main>
 </template>
 
 <script setup lang="ts">
-  import TitleItem from "../components/TitleItem.vue"
+  import PageTitle from "../components/PageTitle.vue"
 </script>
