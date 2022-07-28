@@ -4,7 +4,9 @@
     <div
       class="flex justify-start lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-[#34495E] pb-5 lg:pb-0">
       <div class="flex items-center flex-shrink-0 text-[#34495E] mr-16">
-        <span class="font-semibold text-2xl tracking-tight">KeyWorld</span>
+        <button class="relative" @click="goHome">
+          <span class="font-semibold text-2xl tracking-tight">KeyWorld</span>
+        </button>
       </div>
     </div>
     <div class="relative mx-auto w-4/12 text-gray-600 lg:block hidden">
@@ -13,7 +15,7 @@
         type="search"
         name="search"
         placeholder="Search" />
-      <button type="submit" class="absolute right-0 top-0 mt-3 mr-2">
+      <button type="submit" class="absolute right-0 top-0 mt-3 mr-2" @click="handleSearch">
         <svg
           class="text-gray-600 h-4 w-4 fill-current"
           xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +29,7 @@
       </button>
     </div>
     <div class="flex">
-      <button class="relative">
+      <button class="relative" @click="openCartPreview">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-8 w-8"
@@ -39,7 +41,7 @@
             d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       </button>
-      <button id="nav" class="flex items-center px-3 py-2 text-[#34495E]">
+      <button id="nav" class="flex items-center px-3 py-2 text-[#34495E]" @click="openHamburgerMenu">
         <svg
           class="fill-current h-6 w-6"
           viewBox="0 0 20 20"
@@ -50,3 +52,25 @@
     </div>
   </nav>
 </template>
+
+<script lang="ts">
+  import router from "@/router"
+
+  export default ({
+    name: "PageHeader",
+    methods: {
+      goHome() {
+        router.push("/")
+      },
+      handleSearch() {
+        console.log("Searching...")
+      },
+      openCartPreview() {
+        console.log("Opening cart preview...")
+      },
+      openHamburgerMenu() {
+        console.log("Opening hamburger menu...")
+      }
+    }
+  })
+</script>
