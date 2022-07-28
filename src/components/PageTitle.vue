@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-title-size text-title-blue">
+  <h1 class="text-4xl text-primary">
     {{ title }}
   </h1>
 </template>

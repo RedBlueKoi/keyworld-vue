@@ -5,12 +5,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "title-blue": "#34495E"
+        primary: "#34495E",
+        accent: "#41B883",
+        defaultBackgroudn: "D9D9D9"
       }
-    },
-    fontSize: {
-      "title-size": ["72px", "64px"]
     }
+    // fontSize: {
+    //   "title-size": ["72px", "64px"]
+    // }
   },
   plugins: []
 }
