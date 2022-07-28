@@ -1,10 +1,10 @@
 <template>
   <nav
-    class="flex items-center justify-between flex-wrap bg-green-700 py-4 lg:px-2 shadow border-solid border-t-2 border-blue-700">
+    class="flex items-center justify-between flex-wrap bg-green-700 py-4 lg:px-2 shadow border-solid border-t-2 border-[#34495E]">
     <div
-      class="flex justify-start lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-gray-300 pb-5 lg:pb-0">
-      <div class="flex items-center flex-shrink-0 text-gray-800 mr-16">
-        <span class="font-semibold text-xl tracking-tight">KeyWorld</span>
+      class="flex justify-start lg:w-auto w-full lg:border-b-0 pl-6 pr-2 border-solid border-b-2 border-[#34495E] pb-5 lg:pb-0">
+      <div class="flex items-center flex-shrink-0 text-[#34495E] mr-16">
+        <span class="font-semibold text-2xl tracking-tight">KeyWorld</span>
       </div>
     </div>
     <div class="relative mx-auto w-4/12 text-gray-600 lg:block hidden">
@@ -17,13 +17,8 @@
         <svg
           class="text-gray-600 h-4 w-4 fill-current"
           xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          id="Capa_1"
-          x="0px"
-          y="0px"
           viewBox="0 0 56.966 56.966"
           style="enable-background: new 0 0 56.966 56.966"
-          xml:space="preserve"
           width="512px"
           height="512px">
           <path
@@ -32,24 +27,26 @@
       </button>
     </div>
     <div class="flex">
-      <a
-        href="#"
-        class="block text-md px-4 py-2 rounded text-blue-700 ml-2 font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0">
-        Sign in
-      </a>
-      <div class="block">
-        <button
-          id="nav"
-          class="flex items-center px-3 py-2 border-2 rounded text-blue-700 border-blue-700 hover:text-blue-700 hover:border-blue-700">
-          <svg
-            class="fill-current h-3 w-3"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </button>
-      </div>
+      <button class="relative">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8"
+          fill="none"
+          viewBox="0 0 26 26"
+          stroke="#34495E"
+          stroke-width="2">
+          <path
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      </button>
+      <button id="nav" class="flex items-center px-3 py-2 text-[#34495E]">
+        <svg
+          class="fill-current h-6 w-6"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
     </div>
   </nav>
 </template>
