@@ -13,3 +13,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.link-primary {
+  @apply no-underline;
+  @apply transition-colors duration-200 ease-in-out;
+  @apply text-primary hover:text-accent;
+}
+
+.link-animation {
+  @apply relative;
+
+  &::before {
+    @apply w-full h-[1px] right-0 bottom-0 absolute;
+    @apply transition-transform duration-200 ease-in-out;
+    @apply bg-accent;
+    content: "";
+    transform-origin: right;
+    transform: rotateY(90deg);
+  }
+  &:hover {
+    &::before {
+      transform-origin: left;
+      transform: rotateY(0);
+    }
+  }
+}

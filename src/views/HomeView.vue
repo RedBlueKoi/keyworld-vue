@@ -1,6 +1,6 @@
 <template>
   <main>
-    <page-title title="Title" />
+    <page-title>Title</page-title>
   </main>
 </template>
 
