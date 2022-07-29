@@ -55,15 +55,13 @@
 </template>
 
 <script lang="ts">
-  export interface Product {
-    description: string
-    price: string
-  }
+  // import type { Product } from "@/types/products"
 
   export default {
     name: "CartPreview",
     data() {
       return {
+        // Boilerplate data
         products: [
           {
             description:
@@ -85,7 +83,7 @@
               "Some Item with very long name which obviously not gonna fit here and needs to be truncated",
             price: "$156.76"
           }
-        ] as Product[]
+        ]
       }
     }
   }
