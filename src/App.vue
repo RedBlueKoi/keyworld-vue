@@ -8,10 +8,8 @@
 <template>
   <div class="app">
     <page-header />
-    <main class="relative">
-      <cart-preview />
-      <router-view />
-    </main>
+    <cart-preview />
+    <router-view />
     <page-footer />
   </div>
 </template>

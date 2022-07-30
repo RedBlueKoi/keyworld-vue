@@ -1,4 +1,5 @@
 export interface Product {
+  id: string
   category: Category
   description: string
   images: string[]
@@ -17,6 +18,7 @@ interface Perks {
   weight: string
 }
 export interface Category {
+  id: string
   name: string
   description: string
   isDisabled: boolean
