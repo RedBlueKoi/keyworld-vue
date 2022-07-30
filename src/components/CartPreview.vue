@@ -29,7 +29,7 @@
 
 <template>
   <div
-    class="bg-defaultBackground shadow-md w-[400px] fixed top-16 right-2 rounded-md overflow-hidden z-20 shadow-primary">
+    class="bg-defaultBackground shadow-md w-3/4 max-w-[400px] fixed top-16 right-2 rounded-md overflow-hidden z-20 shadow-primary">
     <div class="bg-primary text-white p-3 flex justify-between items-center">
       <div class="flex flex-col">
         <span>Your cart</span>
