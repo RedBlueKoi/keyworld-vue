@@ -12,7 +12,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-defaultBackground;
+  @apply bg-defaultBackground text-primary;
 }
 
 .link-primary {
@@ -43,4 +43,12 @@ body {
       transform: rotateY(0);
     }
   }
+}
+
+.button-primary {
+  @apply bg-primary text-white hover:text-accent;
+  @apply inline-flex justify-center items-center;
+  @apply h-10 px-6;
+  @apply transition-colors duration-200 ease-in-out;
+  @apply rounded-md;
 }
