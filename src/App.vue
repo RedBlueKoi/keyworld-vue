@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { RouterView } from "vue-router"
-  import PageFooter from "./components/PageFooter.vue"
+  import PageFooter from "@/components/page-footer/PageFooter.vue"
 </script>
 
 <template>
