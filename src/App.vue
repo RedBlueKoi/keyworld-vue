@@ -1,12 +1,13 @@
 <script setup lang="ts">
   import { RouterView } from "vue-router"
+  import PageFooter from "@/components/page-footer/PageFooter.vue"
 </script>
 
 <template>
   <div class="app">
     <header class="bg-accent">Page header</header>
-    <main><RouterView /></main>
-    <footer class="bg-primary">Page footer</footer>
+    <main><router-view /></main>
+    <page-footer />
   </div>
 </template>
 
