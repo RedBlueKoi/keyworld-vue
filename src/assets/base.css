@@ -4,13 +4,43 @@
 
 body {
   min-height: 100vh;
-  font-size: 18px;
-  transition: color 0.5s, background-color 0.5s;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  scroll-behavior: smooth;
   font-size: 18px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @apply bg-defaultBackground;
+}
+
+.link-primary {
+  @apply no-underline;
+  @apply transition-colors duration-200 ease-in-out;
+  @apply text-primary hover:text-accent;
+}
+.link-accent {
+  @apply no-underline;
+  @apply transition-colors duration-200 ease-in-out;
+  @apply text-white hover:text-accent;
+}
+
+.link-animation {
+  @apply relative;
+
+  &::before {
+    @apply w-full h-[1px] right-0 bottom-0 absolute;
+    @apply transition-transform duration-200 ease-in-out;
+    @apply bg-accent;
+    content: "";
+    transform-origin: right;
+    transform: rotateY(90deg);
+  }
+  &:hover {
+    &::before {
+      transform-origin: left;
+      transform: rotateY(0);
+    }
+  }
 }
