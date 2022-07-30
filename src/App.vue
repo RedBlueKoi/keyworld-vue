@@ -4,8 +4,11 @@
 </script>
 
 <template>
-  <RouterView />
-  <page-footer />
+  <div class="app">
+    <header class="bg-accent">Page header</header>
+    <main><RouterView /></main>
+    <page-footer />
+  </div>
 </template>
 
 <style lang="postcss">
@@ -13,5 +16,10 @@
 
   #app {
     min-height: 100vh;
+  }
+  .app {
+    @apply grid grid-cols-1;
+    @apply min-h-screen;
+    grid-template-rows: auto 1fr auto;
   }
 </style>
