@@ -8,7 +8,7 @@
 <template>
   <div class="app">
     <page-header />
-    <main>
+    <main class="relative">
       <cart-preview />
       <router-view />
     </main>
