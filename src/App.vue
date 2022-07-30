@@ -6,7 +6,7 @@
 <template>
   <div class="app">
     <header class="bg-accent">Page header</header>
-    <main><RouterView /></main>
+    <main><router-view /></main>
     <page-footer />
   </div>
 </template>

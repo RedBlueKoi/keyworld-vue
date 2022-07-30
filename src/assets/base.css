@@ -12,12 +12,18 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @apply bg-defaultBackground;
 }
 
 .link-primary {
   @apply no-underline;
   @apply transition-colors duration-200 ease-in-out;
   @apply text-primary hover:text-accent;
+}
+.link-accent {
+  @apply no-underline;
+  @apply transition-colors duration-200 ease-in-out;
+  @apply text-white hover:text-accent;
 }
 
 .link-animation {

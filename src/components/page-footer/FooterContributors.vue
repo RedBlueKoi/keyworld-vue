@@ -25,7 +25,11 @@
 <template>
   <ul class="flex justify-center items-center flex-wrap gap-2 w-full">
     <li v-for="contributor in contributors" :key="contributor.gitHubLink">
-      <a :href="contributor.gitHubLink" target="_blank" rel="nofollow">
+      <a
+        :href="contributor.gitHubLink"
+        target="_blank"
+        rel="nofollow"
+        class="link-accent link-animation">
         {{ contributor.name }}
       </a>
     </li>
