@@ -27,7 +27,7 @@
 
 <template>
   <header
-    class="bg-accent flex justify-between items-center gap-4 px-4 py-2 shadow-xl">
+    class="bg-accent flex justify-between items-center gap-4 px-4 py-2 shadow-sm sticky top-0 shadow-primary z-10">
     <a href="/" class="text-primary text-3xl font-semibold">Keyworld</a>
     <page-header-search v-model="search" />
     <div class="text-primary flex gap-4">

@@ -1,58 +1,36 @@
-import { onMounted, ref, watch, type Ref } from "vue"
-import {
-  collection,
-  CollectionReference,
-  doc,
-  getDocs,
-  query,
-  where
-} from "firebase/firestore"
+import { ref, watch } from "vue"
+import { collection, doc, getDocs, query, where } from "firebase/firestore"
 import db from "./firebase"
 import type { Product } from "@/types/products"
+import useCategory from "./useCategory"
 
-const useProducts = (categoryId: Ref<string | null>) => {
+const useProducts = () => {
   const products = ref<Product[]>([])
   const areProductsLoading = ref<boolean>(true)
+  const { category, isCategoryLoading } = useCategory()
 
-  const getAll = async (
-    collectionRef: CollectionReference
-  ): Promise<Product[]> => {
-    const response = await getDocs(collectionRef)
-    return response.docs.map((item) => item.data() as Product)
-  }
-
-  const getFiltered = async (
-    collectionRef: CollectionReference
-  ): Promise<Product[]> => {
-    if (!categoryId.value) return []
-    const categoriesCol = collection(db, "categories")
-    const categoryRef = doc(categoriesCol, categoryId.value)
-    const q = query(collectionRef, where("category", "==", categoryRef))
+  const fetchProducts = async () => {
+    if (!category.value) return
+    const productsCollection = collection(db, "products")
+    const categoryRef = doc(db, `/categories/${category.value.id}`)
+    const q = query(productsCollection, where("category", "==", categoryRef))
     const response = await getDocs(q)
-    return response.docs.map((item) => item.data() as Product)
-  }
-
-  const refresh = async () => {
-    try {
-      const productsCol = collection(db, "products")
-      products.value = categoryId.value
-        ? await getFiltered(productsCol)
-        : await getAll(productsCol)
-    } catch (error) {
-      console.error(error)
-    }
+    products.value = response.docs.map((doc) => {
+      return {
+        id: doc.id,
+        ...doc.data()
+      } as Product
+    })
     areProductsLoading.value = false
   }
 
-  onMounted(() => {
-    void refresh()
+  watch([category, isCategoryLoading], () => {
+    if (isCategoryLoading.value) return
+    if (!category.value) return
+    void fetchProducts()
   })
 
-  watch([categoryId], () => {
-    void refresh()
-  })
-
-  return { products, areProductsLoading }
+  return { products, areProductsLoading, fetchProducts }
 }
 
 export default useProducts
