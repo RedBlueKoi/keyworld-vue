@@ -9,7 +9,7 @@
   <div class="app">
     <page-header />
     <main class="relative">
-      <cart-preview />
+      <!--<cart-preview />-->
       <router-view />
     </main>
     <page-footer />
@@ -22,6 +22,7 @@
   #app {
     min-height: 100vh;
   }
+
   .app {
     @apply grid grid-cols-1;
     @apply min-h-screen;
