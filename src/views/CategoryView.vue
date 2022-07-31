@@ -1,31 +1,36 @@
 <script setup lang="ts">
-  import { useCategories } from "@/composables/api"
+  import { useCategory, useProducts } from "@/composables/api"
   import { getSlug } from "@/utils"
-  import { ref, watchEffect } from "vue"
-  import { useRoute, useRouter } from "vue-router"
+  import { watchEffect } from "vue"
+  import { useRouter } from "vue-router"
   import PageTitle from "@/components/PageTitle.vue"
-  import type { Category } from "@/types/products"
 
-  const { params } = useRoute()
   const router = useRouter()
-  const { categories, areCategoriesLoading } = useCategories()
-  const currentCategory = ref<Category | undefined>(undefined)
+  const { category, isCategoryLoading } = useCategory()
+  const { products, areProductsLoading } = useProducts()
 
   watchEffect(() => {
-    if (areCategoriesLoading.value) return
-    const { categoryName } = params
-    currentCategory.value = categories.value.find(
-      (category) => getSlug(category.name) === categoryName
-    )
-    if (!currentCategory.value) router.push("/not-found")
+    if (isCategoryLoading.value) return
+    if (!category.value) router.push("/not-found")
   })
 </script>
 
 <template>
-  <div v-if="areCategoriesLoading">Loading...</div>
-  <main class="px-4 py-6" v-else>
-    <page-title>{{ currentCategory?.name }}</page-title>
+  <main
+    class="px-4 py-6"
+    v-if="category && !isCategoryLoading && !areProductsLoading">
+    <page-title>{{ category.name }}</page-title>
+    <div class="products">
+      <router-link
+        class="product"
+        :to="`/categories/${getSlug(category.name)}/${getSlug(product.name)}`"
+        v-for="product in products"
+        :key="product.id">
+        {{ product.name }}
+      </router-link>
+    </div>
   </main>
+  <div v-else>Loading...</div>
 </template>
 
 <style scoped lang="postcss"></style>

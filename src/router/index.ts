@@ -20,7 +20,7 @@ const router = createRouter({
       component: () => import("@/views/SuccessView.vue")
     },
     {
-      path: "/categories/:categoryName/:productId",
+      path: "/categories/:categoryName/:productName",
       name: "product",
       component: () => import("@/views/ProductView.vue")
     },
