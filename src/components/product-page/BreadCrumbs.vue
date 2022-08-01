@@ -1,10 +1,10 @@
 <script setup lang="ts">
+  import useCategory from "@/composables/api/useCategory"
+  import { capitalize } from "@/utils"
+
   defineProps<{ productName: string }>()
-  const capitalize = (str: { toString: () => string }): string => {
-    return str.toString().replaceAll(/\b[a-zA-Z]/g, (match: string) => {
-      return match.toUpperCase()
-    })
-  }
+
+  const { category } = useCategory()
 </script>
 
 <template>
@@ -13,7 +13,7 @@
       Home
     </router-link>
     <router-link class="link-primary link-animation" :to="{ name: 'category' }">
-      {{ capitalize($route.params.categoryName) }}
+      {{ capitalize(category?.name) }}
     </router-link>
     <span>{{ productName }}</span>
   </nav>

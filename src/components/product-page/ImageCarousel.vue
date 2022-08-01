@@ -13,19 +13,25 @@
         props.images.length) %
       props.images.length
   }
+
+  const imageLoaded = ref(false)
 </script>
 
 <template>
-  <div class="relative" v-if="images">
+  <div class="relative">
     <TransitionGroup
       name="carousel"
       tag="div"
       class="relative w-full overflow-hidden rounded-2xl drop-shadow-lg">
       <img
         v-for="(image, index) in images"
+        @load="imageLoaded = true"
         :src="image"
         class="w-full"
-        :class="activeIndex !== index ? 'absolute top-0' : ''"
+        :class="[
+          activeIndex !== index ? 'absolute top-0' : '',
+          !imageLoaded ? ' aspect-video bg-darkBackground' : ''
+        ]"
         v-show="activeIndex === index"
         :data-index="index"
         :key="index" />
@@ -33,12 +39,14 @@
     <icon-mdi
       :icon="mdiChevronLeft"
       :size="48"
-      class="absolute inset-y-1/2 cursor-pointer left-0"
+      stroke="hsla(0deg,0%,50%,0.5)"
+      class="absolute inset-y-1/2 cursor-pointer left-0 stroke-[0.5px]"
       @click="changeImage(-1)" />
     <icon-mdi
       :icon="mdiChevronRight"
       :size="48"
-      class="absolute inset-y-1/2 cursor-pointer right-0"
+      stroke="hsla(0deg,0%,50%,0.5)"
+      class="absolute inset-y-1/2 cursor-pointer right-0 stroke-[0.5px]"
       @click="changeImage(1)" />
     <div class="flex gap-2 p-2 max-w-xl mx-auto">
       <span

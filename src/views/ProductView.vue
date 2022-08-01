@@ -1,11 +1,12 @@
 <script setup lang="ts">
+  import { watchEffect } from "vue"
+  import { useRouter } from "vue-router"
+  import { useProduct } from "@/composables/api"
+  import { capitalize } from "@/utils"
   import BreadCrumbs from "@/components/product-page/BreadCrumbs.vue"
   import ImageCarousel from "@/components/product-page/ImageCarousel.vue"
   import PrimaryButton from "@/components/PrimaryButton.vue"
   import PageTitle from "@/components/PageTitle.vue"
-  import { useProduct } from "@/composables/api"
-  import { watchEffect } from "vue"
-  import { useRouter } from "vue-router"
 
   const { product, isProductLoading } = useProduct()
   const router = useRouter()
@@ -14,12 +15,6 @@
     if (isProductLoading.value) return
     if (!product.value) router.push({ name: "not-found" })
   })
-
-  const capitalize = (str: { toString: () => string }): string => {
-    return str.toString().replaceAll(/\b[a-zA-Z]/g, (match: string) => {
-      return match.toUpperCase()
-    })
-  }
 </script>
 
 <template>
