@@ -7,6 +7,7 @@
     isFloating?: boolean
     disabled?: boolean
   }
+
   const props = withDefaults(defineProps<Props>(), {
     type: "button",
     color: "primary",
@@ -27,8 +28,7 @@
     if (props.isFloating) styleArray.push("shadow-md shadow-primary")
     if (props.disabled) styleArray.push("bg-slate-500 opacity-30")
     if (!props.disabled)
-      styleArray.push(props.color ? "bg-accent" : "bg-primary")
-    styleArray.push(props.color === "accent" ? "bg-accent" : "bg-primary")
+      styleArray.push(props.color === "accent" ? "bg-accent" : "bg-primary")
     return styleArray.join(" ")
   })
 </script>

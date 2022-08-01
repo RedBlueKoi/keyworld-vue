@@ -1,5 +1,10 @@
 <script setup lang="ts">
-  const props = defineProps<{ productName: string }>()
+  defineProps<{ productName: string }>()
+  const capitalize = (str: { toString: () => string }): string => {
+    return str.toString().replaceAll(/\b[a-zA-Z]/g, (match: string) => {
+      return match.toUpperCase()
+    })
+  }
 </script>
 
 <template>
@@ -8,7 +13,7 @@
       Home
     </router-link>
     <router-link class="link-primary link-animation" :to="{ name: 'category' }">
-      {{ $route.params.categoryName }}
+      {{ capitalize($route.params.categoryName) }}
     </router-link>
     <span>{{ productName }}</span>
   </nav>

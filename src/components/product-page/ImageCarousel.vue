@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { computed, ref } from "vue"
+  import { ref } from "vue"
   import IconMdi from "@/components/IconMdi.vue"
   import { mdiChevronLeft, mdiChevronRight } from "@mdi/js"
 
@@ -20,7 +20,7 @@
     <TransitionGroup
       name="carousel"
       tag="div"
-      class="relative w-full overflow-hidden rounded-2xl">
+      class="relative w-full overflow-hidden rounded-2xl drop-shadow-lg">
       <img
         v-for="(image, index) in images"
         :src="image"
