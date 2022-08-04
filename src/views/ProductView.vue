@@ -18,10 +18,10 @@
 </script>
 
 <template>
-  <main class="p-5">
-    <BreadCrumbs :product-name="product?.name" v-if="product" />
+  <main class="p-5 grid gap-6 product-view">
+    <BreadCrumbs :product-name="product.name" v-if="product" />
     <div
-      class="grid grid-cols-[repeat(auto-fit,_minmax(640px,1fr))] gap-10 mt-2"
+      class="grid grid-cols-[repeat(auto-fit,_minmax(640px,1fr))] gap-10"
       v-if="product">
       <div class="flex flex-col">
         <ImageCarousel :images="product?.images" class="w-full" />
@@ -74,4 +74,8 @@
   </main>
 </template>
 
-<style scoped lang="postcss"></style>
+<style scoped lang="postcss">
+  .product-view {
+    grid-template-rows: auto 1fr;
+  }
+</style>

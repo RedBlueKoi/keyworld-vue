@@ -9,20 +9,26 @@
 
 <template>
   <nav>
-    <router-link class="link-primary link-animation" :to="{ name: 'home' }">
-      Home
-    </router-link>
-    <router-link class="link-primary link-animation" :to="{ name: 'category' }">
-      {{ capitalize(category?.name) }}
-    </router-link>
-    <span>{{ productName }}</span>
+    <ul class="flex justify-start items-center gap-2">
+      <li>
+        <router-link class="link-primary link-animation" :to="{ name: 'home' }">
+          Home
+        </router-link>
+      </li>
+      <li aria-hidden="true">/</li>
+      <li>
+        <router-link
+          class="link-primary link-animation"
+          :to="{ name: 'category' }">
+          {{ capitalize(category?.name) }}
+        </router-link>
+      </li>
+      <li aria-hidden="true">/</li>
+      <li>
+        <span>{{ productName }}</span>
+      </li>
+    </ul>
   </nav>
 </template>
 
-<style scoped lang="postcss">
-  a {
-    &::after {
-      content: " / ";
-    }
-  }
-</style>
+<style scoped lang="postcss"></style>
