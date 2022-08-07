@@ -1,7 +1,7 @@
 <template>
   <div
     class="flex flex-column bg-primary shadow-md shadow-primary rounded-md overflow-hidden relative hover:-translate-y-1 hover:shadow-2xl transition-all duration-200 ease-in-out">
-    <router-link to="`categories/${getSlug(category.name)}`">
+    <router-link :to="'categories/' + getSlug(category.name)">
       <img
         :src="category.img"
         :alt="category.name"
@@ -23,6 +23,9 @@
         type: Object,
         required: true
       }
+    },
+    methods: {
+      getSlug
     }
   }
 </script>
