@@ -1,7 +1,7 @@
 <template>
   <div
     class="flex flex-column bg-primary shadow-md shadow-primary rounded-md overflow-hidden relative hover:-translate-y-1 hover:shadow-2xl transition-all duration-200 ease-in-out">
-    <router-link :to="'categories/' + getSlug(category.name)">
+    <RouterLink :to="`categories/${getSlug(category.name)}`">
       <img
         :src="category.img"
         :alt="category.name"
@@ -10,22 +10,16 @@
         class="absolute top-0 left-0 pb-6 w-full h-full flex justify-center items-end bg-primary bg-opacity-40 text-white hover:opacity-0 hover:pb-12 transition-all duration-200 ease-in-out">
         {{ category.name }}
       </div>
-    </router-link>
+    </RouterLink>
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
+  import type { Category } from "@/types/products"
+  import { defineProps } from "vue"
   import { getSlug } from "@/utils"
 
-  export default {
-    props: {
-      category: {
-        type: Object,
-        required: true
-      }
-    },
-    methods: {
-      getSlug
-    }
-  }
+  const props = defineProps<{
+    category: Category
+  }>()
 </script>
