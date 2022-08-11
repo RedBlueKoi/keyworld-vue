@@ -23,4 +23,3 @@
     category: Category
   }>()
 </script>
-nvm use
