@@ -1,7 +1,7 @@
 <template>
   <div
     class="flex flex-column bg-primary shadow-md shadow-primary rounded-md overflow-hidden relative hover:-translate-y-1 hover:shadow-2xl transition-all duration-200 ease-in-out">
-    <router-link :to="`categories/${getSlug(category.name)}`">
+    <router-link :to="`categories/${getSlug(category.name)}`" class="w-full">
       <img
         :src="category.img"
         :alt="category.name"
@@ -16,10 +16,9 @@
 
 <script setup lang="ts">
   import type { Category } from "@/types/products"
-  import { defineProps } from "vue"
   import { getSlug } from "@/utils"
 
-  const props = defineProps<{
+  defineProps<{
     category: Category
   }>()
 </script>
