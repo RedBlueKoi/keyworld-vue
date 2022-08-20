@@ -21,16 +21,15 @@
     class="px-4 py-6"
     v-if="category && !isCategoryLoading && !areProductsLoading">
     <page-title>{{ category.name }}</page-title>
-    <div class="py-6 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <div class="products">
-        <router-link
-          v-for="product in products"
-          class="product"
-          :to="`/categories/${getSlug(category.name)}/${getSlug(product.name)}`"
-          :key="product.id">
-          <product-card :product="product" />
-        </router-link>
-      </div>
+    <div
+      class="py-6 w-full grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <router-link
+        v-for="product in products"
+        class="product"
+        :to="`/categories/${getSlug(category.name)}/${getSlug(product.name)}`"
+        :key="product.id">
+        <product-card :product="product" />
+      </router-link>
     </div>
   </main>
   <div v-else>Loading...</div>
