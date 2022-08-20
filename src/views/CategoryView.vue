@@ -26,7 +26,7 @@
         <router-link
           v-for="product in products"
           class="product"
-          :to="`/product/${getSlug(product.name)}`"
+          :to="`/categories/${getSlug(category.name)}/${getSlug(product.name)}`"
           :key="product.id">
           <product-card :product="product" />
         </router-link>
